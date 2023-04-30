@@ -1,0 +1,184 @@
+.header-sheet {
+    height: 80px;
+    border-bottom: 1px solid #ececec;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        height: inherit;
+    }
+
+    &__logo {
+        font-family: "Raleway";
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 1.19;
+        letter-spacing: 0.03em;
+        color: $hover-texts-color;
+        text-decoration: none;
+    }
+
+    &__black {
+        color: $team-texts-color;
+    }
+}
+
+.header-list {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        -webkit-box-align: center;
+    }
+}
+
+.header-button {
+    display: block;
+    margin-left: auto;
+    background-color: rgba(240, 255, 255, 0);
+    border: none;
+
+    @media screen and (min-width:768px) {
+        display: none;
+    }
+}
+
+.icon-menu {
+    display: flex;
+
+
+    @media screen and (min-width:768px) {
+        display: none;
+    }
+}
+
+.sheets {
+    @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        width: 283px;
+        margin-left: 87px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 290px;
+        margin-left: 93px;
+    }
+
+    &__overlay::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 3px;
+        position: absolute;
+        top: 96%;
+        background-color: $hover-texts-color;
+        border-radius: 5px;
+        margin-top: 30px;
+    }
+
+    &__link {
+        font-weight: 500;
+        @extend %text;
+        letter-spacing: 0.02em;
+        color: $team-texts-color;
+        text-decoration: none;
+        @extend %flex;
+        transition: 0.2s;
+        position: relative;
+        height: 100%;
+
+        &:hover {
+            color: $hover-texts-color;
+        }
+    }
+}
+
+.contacts {
+    margin-left: 0;
+
+    @media screen and (min-width: 768px) {
+        margin-left: 96px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        justify-content: space-between;
+        width: 333px;
+        margin-left: 309px;
+    }
+
+    &__tell {
+        display: flex;
+        font-weight: 500;
+        @extend %text;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        color: $main-texts-color;
+        text-decoration: none;
+        align-items: center;
+
+        @media screen and (min-width: 1200px) {
+            font-size: 14px;
+        }
+
+        &:hover {
+            color: $hover-texts-color;
+        }
+    }
+
+    &__email {
+        display: flex;
+        font-weight: 500;
+        @extend %text;
+        letter-spacing: 0.02em;
+        font-size: 12px;
+        color: $main-texts-color;
+        text-decoration: none;
+        align-items: center;
+
+        @media screen and (min-width: 1200px) {
+            font-size: 14px;
+        }
+
+        &:hover {
+            color: $hover-texts-color;
+        }
+    }
+
+    &__icon {
+        fill: $main-texts-color;
+        margin-right: 10px;
+
+        & {
+            fill: currentColor;
+            transition: all cubic-bezier(.1, .53, .86, .42) 0.3s;
+
+            &:hover {
+                transform: rotate(3600deg);
+            }
+        }
+    }
+
+    &__item {
+        transition: all cubic-bezier(.1, .53, .86, .42) 0.3s;
+
+        &:first-child {
+            margin-bottom: 10px;
+
+            @media screen and (min-width: 1200px) {
+                margin-bottom: 0;
+            }
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+    }
+
+}
+
+.sheets__link:hover>svg {
+    fill: $hover-texts-color;
+}
